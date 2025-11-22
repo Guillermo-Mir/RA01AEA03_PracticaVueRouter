@@ -6,6 +6,7 @@
     <nav class="nav">
       <RouterLink class="nav-link" to="/">Inici</RouterLink>
       <RouterLink class="nav-link" to="/Recipes">Receptes</RouterLink>
+      <RouterLink class="nav-link" to="/HomeProvide"> Provide&Inject</RouterLink>
     </nav>
     <hr class="divider" />
   </header>

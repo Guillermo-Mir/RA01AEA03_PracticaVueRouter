@@ -7,7 +7,7 @@ const recipes = ref([
         id: 1,
         name: 'Filet de Ganxet',
         desc: 'Tall sucós i saborós de vedella, ideal per planxa o guisats.',
-        img: '',
+        img: 'https://images.ecestaticos.com/daIKk1Zivj-HWdLwCdYiJ4fwkpw=/0x109:2118x1300/1200x1200/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2Fae7%2F057%2Ff66%2Fae7057f662514c104cf253f096b86680.jpg',
         ingredients: [
             '500 g de filet de Ganxet',
             'Sal i pebre al gust',
@@ -25,7 +25,7 @@ const recipes = ref([
         id: 2,
         name: 'Pasta Carbonara',
         desc: 'Pasta amb salsa cremosa d’ou, formatge i cansalada.',
-        img: '',
+        img: 'https://assets.tmecosys.com/image/upload/t_web_rdp_recipe_584x480/img/recipe/ras/Assets/0346a29a89ef229b1a0ff9697184f944/Derivates/cb5051204f4a4525c8b013c16418ae2904e737b7.jpg',
         ingredients: [
             '400 g de pasta',
             '150 g de cansalada o pancetta',
@@ -45,7 +45,7 @@ const recipes = ref([
         id: 3,
         name: 'Croquetes de Galta de Vedella',
         desc: 'Croquetes casolanes elaborades amb galta de vedella melosa.',
-        img: '',
+        img: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg6sS30iMzDhJaRvwuNc00sMQWQF2Saxl6IoLErvJViEj9Ce3a4cttLz_x42VH-0gExwtzNBW7kn4RHtL7_KdFiwk9OEUiG7uR_hlGDJT_i-1LMVpj7-IUas8ysraaJHb8ULpgj2F2F53o/s2048/FF5F35E8-E416-417B-AD80-AEEA4C648702.jpeg',
         ingredients: [
             '300 g de galta de vedella cuita i desmenuçada',
             '50 g de mantega',
@@ -66,7 +66,6 @@ const recipes = ref([
 
 const route = useRoute()
 const recipe = ref(null)
-const recipeID = parseInt(route.params.id)
 
 const carregarrecipe = (id) => {
     const newID = parseInt(id)
@@ -89,14 +88,14 @@ watch(
         <section class="recipe-section">
             <h2>Ingredients</h2>
             <ul>
-                <li v-for="(ing, ingredient) in recipe.ingredients" :key="ingredient">{{ ing }}</li>
+                <li v-for="ing in recipe.ingredients" :key="ing">{{ ing }}</li>
             </ul>
         </section>
 
         <section class="recipe-section">
             <h2>Passos</h2>
             <ol>
-                <li v-for="(step, steps) in recipe.pas" :key="steps">{{ step }}</li>
+                <li v-for="step in recipe.pas" :key="step">{{ step }}</li>
             </ol>
         </section>
 
@@ -155,8 +154,13 @@ li {
 }
 
 .recipe-img img {
-    max-width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 320px;            
+    object-fit: cover;        
+    object-position: center;  
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+    display: block;
+    margin: 0 auto;
 }
 </style>

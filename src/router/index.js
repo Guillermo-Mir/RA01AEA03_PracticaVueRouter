@@ -17,7 +17,11 @@ const router = createRouter({
         name: "recipeDetail",
         component: ()=>import('@/views/RecipeDetail.vue'),
       }]
-    }
+    },
+    { 
+      path: "/HomeProvide", 
+      name:"homeprovide", 
+      component: () => import("@/App2.vue") }
   ],
 })
 
