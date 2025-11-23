@@ -94,9 +94,9 @@ watch(
 
         <section class="recipe-section">
             <h2>Passos</h2>
-            <ol>
+            <ul>
                 <li v-for="step in recipe.pas" :key="step">{{ step }}</li>
-            </ol>
+            </ul>
         </section>
 
         <div class="recipe-img">
