@@ -138,8 +138,7 @@ watch(
     padding-bottom: 0.25rem;
 }
 
-ul,
-ol {
+ul{
     padding-left: 1.5rem;
     color: #333;
 }
